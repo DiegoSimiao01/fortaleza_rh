@@ -1,0 +1,376 @@
+:root {
+    --cor-vermelho: #D00000;
+    --cor-azul: #003087;
+    --cor-branco: #FFFFFF;
+    --cor-fundo: #F0F2F5;
+    --cor-texto: #333;
+    --cor-borda: #E0E0E0;
+    --cor-vermelho-hover: #A00000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.main-container {
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 2vh; 
+}
+
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--cor-azul);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: var(--cor-branco);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--cor-borda);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding: 10px 0; 
+}
+
+.header::before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 80px;
+    
+    /* CORREÇÃO: 
+       Trocamos o código SVG complicado por um link direto 
+       para uma imagem PNG do logo. 
+    */
+    background-image: url('https://toppng.com/uploads/preview/escudos-hd-de-futebol-logo-fortaleza-esporte-clube-11563049453mpby12kfkl.png');
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header h1 {
+    font-size: 2.2em;
+    color: var(--cor-azul);
+    margin: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: none;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 1.05em;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8fbfd;
+    color: #555;
+    transition: border-color 0.1s ease, box-shadow 0.1s ease;
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group select option[value=""] {
+    color: #999;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--cor-vermelho);
+    box-shadow: 0 0 8px rgb(252, 3, 3);
+    background-color: var(--cor-branco);
+}
+
+.btn-submit {
+    background: var(--cor-vermelho);
+    color: var(--cor-branco);
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1.1em;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: background-color 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
+    box-shadow: 0 4px 10px rgb(255, 5, 5);
+}
+
+.btn-submit:hover {
+    background: var(--cor-vermelho-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgb(255, 10, 10);
+}
+
+.lista-section {
+    padding: 24px;
+    margin-top: 30px;
+}
+
+.lista-section h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--cor-vermelho);
+    color: var(--cor-azul);
+}
+
+.total-funcionarios {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.total-funcionarios strong {
+    color: var(--cor-vermelho);
+    font-weight: 600;
+}
+
+.funcionario-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.1s ease;
+}
+
+.funcionario-item:hover {
+    background-color: #f9fbfd;
+}
+
+.funcionario-item:last-child {
+    border-bottom: none;
+}
+
+.funcionario-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto; 
+    min-width: 0;
+}
+
+.funcionario-info strong {
+    font-weight: 500;
+    font-size: 1.05em;
+    color: var(--cor-texto);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.funcionario-info span {
+    font-size: 0.85em;
+    color: #777;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.funcionario-id {
+    background: var(--cor-azul);
+    color: var(--cor-branco);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.75em;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+.empty-state {
+    text-align: center;
+    color: #888;
+    padding: 20px;
+    font-style: italic;
+}
+
+/* --- ESTILO DO BOTÃO DE VOLTAR --- */
+.btn-back {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9em;
+    color: var(--cor-azul);
+    margin-bottom: 20px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-back:hover {
+    background-color: #e0e9f5;
+}
+
+/* --- ESTILOS DA PÁGINA PRINCIPAL (index.html) --- */
+.dashboard-container .header {
+    margin-bottom: 20px;
+}
+
+.welcome-message {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 25px;
+}
+
+.welcome-message h2 {
+    color: var(--cor-azul);
+    margin-bottom: 10px;
+}
+
+.welcome-message p {
+    font-size: 1.1em;
+    color: var(--cor-texto);
+}
+
+.dashboard-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dashboard-card {
+    text-decoration: none;
+    color: var(--cor-texto);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    padding: 25px 25px 25px 90px;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card .card-icon {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 3em;
+    color: var(--cor-vermelho);
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dashboard-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.4em;
+    color: var(--cor-azul);
+    margin-bottom: 5px;
+}
+
+.dashboard-card p {
+    font-size: 1em;
+    color: #555;
+}
+
+.dashboard-card.disabled {
+    background-color: #f9f9f9;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.dashboard-card.disabled:hover {
+    transform: none;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* --- ESTILOS PARA EDITAR E DELETAR --- */
+.funcionario-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.funcionario-actions form {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+.btn-edit,
+.btn-delete {
+    text-decoration: none;
+    color: var(--cor-branco);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.8em;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-edit {
+    background-color: var(--cor-azul);
+}
+.btn-edit:hover {
+    background-color: #001f5a;
+}
+
+.btn-delete {
+    background-color: #E63946; 
+}
+.btn-delete:hover {
+    background-color: #C02E39;
+}
+
+.btn-edit-save {
+    background: var(--cor-azul);
+    box-shadow: 0 4px 10px rgba(0, 48, 135, 0.2);
+}
+.btn-edit-save:hover {
+    background: #001f5a;
+    box-shadow: 0 6px 15px rgba(0, 48, 135, 0.3);
+}
+
+.funcionario-actions .funcionario-id {
+    margin-left: 0;
+    margin-right: 5px; 
+    padding: 5px 10px;
+    font-size: 0.75em;
+}
