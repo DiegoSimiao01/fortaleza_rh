@@ -66,8 +66,7 @@ h1, h2 {
        Trocamos o código SVG complicado por um link direto 
        para uma imagem PNG do logo. 
     */
-    background-image: url('https://toppng.com/uploads/preview/escudos-hd-de-futebol-logo-fortaleza-esporte-clube-11563049453mpby12kfkl.png');
-    
+    background-image: url('/static/images/logo.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
