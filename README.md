@@ -1,3 +1,8 @@
+Link do projeto:
+https://fortaleza-rh.onrender.com
+
+OBS: demora um pouco para carregar lol.
+
 # Sistema de cadastro com tema do Fortaleza Esporte Clube
 
 ✨ Funcionalidades
